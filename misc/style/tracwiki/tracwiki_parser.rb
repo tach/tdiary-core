@@ -42,7 +42,7 @@ class TracwikiParser
 		raise(TracwikiParseError, 'Parse string does not exist') unless ( f )
 		@q = ParserQueue::new
 		nest = 0
-		f.each do |l|
+		f.each_line do |l|
 			l.sub!( /[\r\n]+\Z/, '' )
 			if @q.last == :FD && l != '}}}'
 				@q.pop
