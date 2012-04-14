@@ -206,7 +206,7 @@ module TDiary
 		def append( body, author = nil )
 			# body1 is a section starts without subtitle.
 			# body2 are sections starts with subtitle.
-			if /(.*?)^(=\s+.*\s+=)$/m =~ body
+			if /\A(.*?)^(=\s+?.*\s+?=\s*?$.*)\z/m =~ body
 				body1 = $1
 				body2 = $2
 			elsif /^=\s+/ !~ body
